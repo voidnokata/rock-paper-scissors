@@ -13,63 +13,102 @@ function getComputerChoice() {
     return computerchoice;
 }
 
+function compute (playerSelection) {
 
-function singleround(playerSelection, computerSelection) {
-
+    let computerSelection = getComputerChoice();
+    
     if (playerSelection == computerSelection) {
-        alert("Round Draw!");
+        const announcement = document.querySelector("#announce");
+        announcement.textContent = "THIS ROUND IS DRAW!"
     }
     
     else if (playerSelection == "rock") {
 
         if (computerSelection == "paper") {
-            alert("You lose the round!");
-            computerscore++;
+            const announcement = document.querySelector("#announce");
+            announcement.textContent = "YOU LOSE THIS ROUND!"
+            computerscorecounter++;
+            computercounter.textContent = computerscorecounter;
         }
         else {
-            alert("You win the round!");
-            playerscore++;
+            const announcement = document.querySelector("#announce");
+            announcement.textContent = "YOU WIN THIS ROUND!"
+            playerscorecounter++;
+            playercounter.textContent = playerscorecounter;
         }
     }
 
     else if (playerSelection == "paper") {
         if (computerSelection == "scissors") {
-            alert("You lose the round!");
-            computerscore++;
+            const announcement = document.querySelector("#announce");
+            announcement.textContent = "YOU LOSE THIS ROUND!"
+            computerscorecounter++;
+            computercounter.textContent = computerscorecounter;
         }
         else {
-            alert("You win the round!");
-            playerscore++;
+            const announcement = document.querySelector("#announce");
+            announcement.textContent = "YOU WIN THIS ROUND!"
+            playerscorecounter++;
+            playercounter.textContent = playerscorecounter;
         }
     }
     
     else if (playerSelection == "scissors") {
         if (computerSelection == "rock") {
-            alert("You lose the round!");
-            computerscore++;
+            const announcement = document.querySelector("#announce");
+            announcement.textContent = "YOU LOSE THIS ROUND!"
+            computerscorecounter++;
+            computercounter.textContent = computerscorecounter;
+
         }
         else {
-            alert("You win the round!");
-            playerscore++;
+            const announcement = document.querySelector("#announce");
+            announcement.textContent = "YOU WIN THIS ROUND!"
+            playerscorecounter++;
+            playercounter.textContent = playerscorecounter;
         }
     }
+
+    if (playerscorecounter == 5) {
+        const announcement = document.querySelector("#announce");
+        announcement.textContent = "YOU WON! GAME IS OVER!"
+        playerscorecounter = 0;
+        computerscorecounter = 0;
+        playercounter.textContent = playerscorecounter;
+        computercounter.textContent = computerscorecounter;
+    } 
+    else if (computerscorecounter == 5) {
+        const announcement = document.querySelector("#announce");
+        announcement.textContent = "YOU WON! GAME IS OVER!"
+        playerscorecounter = 0;
+        computerscorecounter = 0;
+        playercounter.textContent = playerscorecounter;
+        computercounter.textContent = computerscorecounter;
+    }
+
 }
 
-function fiveround() {
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Your move?")?.toLowerCase();
-        computerSelection = getComputerChoice();
-        alert("Computer moved:" + computerSelection);
-        singleround(playerSelection, computerSelection);
-      }
-    if (playerscore > computerscore) {
-        alert("You won the game!")
-    }
-    else if (computerscore > playerscore) {
-        alert("You lose the game!")
-    }
-}
 
-let computerscore = 0;
-let playerscore = 0;
-fiveround();
+let playerscorecounter = 0;
+let computerscorecounter = 0;
+
+const playercounter = document.querySelector('#pscore');
+const computercounter = document.querySelector('#cscore');
+
+const rockbutton = document.querySelector("#rockbutton");
+const paperbutton = document.querySelector("#paperbutton");
+const scissorsbutton = document.querySelector("#scissorsbutton");
+
+rockbutton.addEventListener("click", function() {
+    compute("rock");
+});
+paperbutton.addEventListener("click", function() {
+    compute("paper");
+});
+scissorsbutton.addEventListener("click", function() {
+    compute("scissors");
+});
+
+
+
+

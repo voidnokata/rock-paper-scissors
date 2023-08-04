@@ -1,13 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js" defer></script>
+        <title>ROCK PAPER SCISSORS</title>
+    </head>
+    <body>
+        <div class="header">ROCK PAPER SCISSORS</div>
+
+
+        <div class="main">
+
+            <div class="scoretable">
+                <div class="scoretext">
+                    <div id="announce">Whoever gets to 5 points first wins</div>
+                </div>
+                    
+                <div class="scores">
+                    <div class="playerscore">
+                        <img src="./images/user.png">
+                        <div>Player</div>
+                        <div id="pscore">0</div>
+                    </div>
+                    <div class="computerscore">
+                        <img src="./images/robot.png">
+                        <div>Computer</div>
+                        <div id="cscore">0</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="moves">
+                <div id="rockbutton">
+                    <img id="rockimage" src="./images/rock.png" >
+                </div>
+                <div id="paperbutton">
+                    <img id="paperimage" src="./images/paper.png">
+                </div>
+                <div id="scissorsbutton">
+                    <img id="scissorsimage" src="./images/scissors.png">
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer">RPS for the Odin Project</div>
+    </body>
+    </html>
